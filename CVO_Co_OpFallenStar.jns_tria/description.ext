@@ -4,21 +4,21 @@
 class Header
 {
 	gameType = "Coop";	// game type
-	minPlayers =  1;	// minimum number of players the mission supports
-	maxPlayers = 20;	// maximum number of players the mission supports
+	minPlayers =  4;	// minimum number of players the mission supports
+	maxPlayers = 12;	// maximum number of players the mission supports
 };
 
-author = "Someone [CVO]";
+author = "Father Zorn [CVO]";
 
-onLoadName = "CVO Mission Title";                       // Loading Screen: Mission Title
-onLoadMission = "If you walk alone, you die alone";     // Loading Screen: Mission Description, short
+onLoadName = "CVO Operation Fallen Star";                       // Loading Screen: Mission Title
+onLoadMission = "CVO Operators help a friend in need...";       // Loading Screen: Mission Description, short
 
-loadScreen = "data\loadScreen_cvo_default.paa";
+loadScreen = "data\loadScreen_fallen_star_2_1.paa";
 
-overviewPicture = "data\loadScreen_cvo_default.paa"; // The picture displayed in the mission selection screen
+overviewPicture = "data\loadScreen_fallen_star_2_1.paa"; // The picture displayed in the mission selection screen
 
-briefingName = "Operation Some Thing"; // The Mission name with operation displayed in the mission selection men
-overviewText = "Description of the mission here"; // The text above the picture in the mission selection menu
+briefingName = "Operation Fallen Star"; // The Mission name with operation displayed in the mission selection men
+overviewText = ""; // The text above the picture in the mission selection menu
 
 
 
@@ -57,17 +57,13 @@ disabledAI = 1;
 // respawnDelay = 120;
 
 // ### Respawn Settings for Events with 1-life
-// respawn = 3;
-// respawnTemplates[] = { "ace_spectator"};
-// respawnDelay = 99999;
-
-
-respawnTemplates[] = {"Counter", "Wave", "ace_spectator"};
 respawn = 3;
+respawnTemplates[] = { "ace_spectator" };
+respawnDelay = 99999;
 
-respawnDelay = 120;
+
+
 respawnVehicleDelay = 99999;
-
 respawnOnStart = 0;
 respawnDialog = 0;
 respawnButton = 0; // Enables the respawn button in the ESC menu
@@ -83,3 +79,11 @@ respawnButton = 0; // Enables the respawn button in the ESC menu
 
 // ###### Other Includes
 
+class CfgSounds {
+    sounds[] = {};
+    #include "scripts\cbrn\sounds\sounds.hpp"
+};
+
+class RscTitles {
+    #include "scripts\cbrn\rsctitles.hpp"
+};
