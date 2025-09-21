@@ -8,7 +8,7 @@ class CfgFunctions {
             class init_babel { postInit = 1; };
             class init_compass { postInit = 1; };
 
-            class init_diary { preInit = 1; };
+            class init_diary { postInit = 1; };
             class init_intel { postInit = 1; };
             
             class init_mission_start { postInit = 1; };

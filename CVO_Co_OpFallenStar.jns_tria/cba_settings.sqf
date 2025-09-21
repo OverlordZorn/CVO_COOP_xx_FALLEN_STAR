@@ -398,3 +398,8 @@ zen_faction_filter_3_UK3CB_TKC_C = true;
 force hoa_sling_allowedModesSetting = "[1, 3]";
 force hoa_sling_canHideHelmet = false;
 force hoa_sling_enabled = true;
+
+
+
+// Cigs on AI
+force cigs_ai_set_cigsonai_chance = 0.75
