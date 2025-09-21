@@ -25,7 +25,7 @@ _delay      - <NUMBER> (optional) delay between each execution in seconds, PFEH 
 if (!hasInterface) exitWith {};
 
 [
-    { missionNamespace getVariable ["mission_go", false] },
+    { missionNamespace getVariable ["mission_start", false] },
     {
         [
             {

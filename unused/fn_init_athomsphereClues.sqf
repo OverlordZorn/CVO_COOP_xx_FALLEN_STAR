@@ -17,7 +17,7 @@
 if (!hasInterface) exitWith {};
 
 [
-    { missionNamespace getVariable ["mission_go", false] },
+    { missionNamespace getVariable ["mission_start", false] },
     {
         private _code = {
             params ["_code"];
@@ -31,7 +31,6 @@ if (!hasInterface) exitWith {};
                     "In the distance: metal groans. Could be wind. Could be something else.",
                     "A faint strobe of red light flickers across the treeline. It doesn't return.",
                     "Your comms crackle: two syllables in a language you don't recognize.",
-                    "The swamp is dead quiet. Not even insects.",
                     "You hear what sounds like distant footsteps in shallow water — but no one's nearby.",
                     "A soft beeping sound echoes briefly through the swamp, then fades.",
                     "Something just moved in the water — but it was gone before you turned your head.",
@@ -55,6 +54,7 @@ if (!hasInterface) exitWith {};
                 ]
             ] call cvo_common_fnc_subtitles;
 
+            // Interval
             [
                 _code,
                 [_code],
@@ -62,10 +62,11 @@ if (!hasInterface) exitWith {};
             ] call CBA_fnc_waitAndExecute;
         };
 
+        // Initial Delay
         [
             _code,
             [_code],
-            60 * (10 + random 10)
+            60 * (30 + random 10)
         ] call CBA_fnc_waitAndExecute;
     }
 ] call CBA_fnc_waitUntilAndExecute;

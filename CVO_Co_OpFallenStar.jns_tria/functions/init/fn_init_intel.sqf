@@ -1,4 +1,5 @@
-leaflet setObjectTexture [0,'#(rgb,512,512,3)text(1,1,"shaffilastri",0.1,"#ffffff","#000000","Find the morse code...")'];
+intel_exfil_leaflet_2 setObjectTexture [0,'#(rgb,512,512,3)text(1,1,"shaffilastri",0.1,"#ffffff","#000000","Follow the song\nof dots and dashes...\nFriends of travesty are near")'];
+
 
 // Groups:
 // Exfil Site
@@ -6,9 +7,37 @@ leaflet setObjectTexture [0,'#(rgb,512,512,3)text(1,1,"shaffilastri",0.1,"#fffff
 // Bandit Camps
 
 [
-    leaflet,
+    intel_exfil_leaflet_1,
     "Mysterious Note on the Wall",
-    "You found a strange note that has been stuck to the wall of the construction site near your exfil. It reads as follows:<br/><font size='34' face='shaffilastri'>Find the morse code...<br/>",
+"You found a note stuck to the wall of the construction site. It reads as follows:
+<br/><font size='34' face='shaffilastri'>
+<br/>Search the Light which only is seen by worriors of the night...",
+    "Exfil Site",
+    true,
+    "Investigate the strange paper on the wall..."
+] call cvo_intel_fnc_createIntel;
+
+
+if (isServer) then {
+    // Create strobe once leaflet 1 has been picked up, deletes it when the 2. leaflet has been picked up
+    [
+        { isNull intel_exfil_leaflet_1 },
+        {
+            private _strobe = "ACE_IR_Strobe_Effect" createVehicle [0,0,1];
+            _strobe setPos ( getPos intel_exfil_leaflet_2 vectorAdd [-0.1,0.4,0.5] );
+            [{ isNull intel_exfil_leaflet_2 }, { deleteVehicle _this }, _strobe] call CBA_fnc_waitUntilAndExecute;
+        }
+    ] call CBA_fnc_waitUntilAndExecute;
+};
+
+
+[
+    intel_exfil_leaflet_2,
+    "Mysterious Note on the Wall",
+"You found another note on a dead tree outside of the construction site. It reads as follows:
+<br/><font size='34' face='shaffilastri'>
+<br/>Follow the song of dots and dashes...
+<br/>Friends of travesty are near",
     "Exfil Site",
     true,
     "Investigate the strange paper on the wall..."

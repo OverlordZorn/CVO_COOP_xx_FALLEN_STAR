@@ -36,6 +36,13 @@ class cvo_arsenal_kits
         };
     };
 
+    class NVG: baseKit {
+        class items {
+            class rhs_acc_perst1ik {};
+            // class rhs_1PN138 {};
+        };
+    };
+
     class Utility: baseKit {
         class items {
             class ItemRadio {};
@@ -111,8 +118,8 @@ class cvo_arsenal_kits
             class G_RegulatorMask_F {};
 
             // Backpack            
-            class B_SCBA_01_F {};
-            class B_CombinationUnitRespirator_01_F {};
+            // class B_SCBA_01_F {};
+            // class B_CombinationUnitRespirator_01_F {};
         };
     };
 
@@ -154,8 +161,6 @@ class cvo_arsenal_kits
 
 
             class rhs_acc_dtk3 {};
-            class rhs_acc_perst1ik {};
-            class rhs_acc_2dpZenit {};
             class rhs_acc_grip_ffg2 {};
             class rhs_acc_grip_rk6 {};
             class rhs_acc_grip_rk2 {};

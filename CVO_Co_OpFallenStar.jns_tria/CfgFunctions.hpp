@@ -3,20 +3,30 @@ class CfgFunctions {
     class mission // TAG
     {
 
-        class Mission // Category
+        class init // Category
         {
-            class diary { preInit = 1; };
-            class babel_init { postInit = 1; };
-            
+            class init_babel { postInit = 1; };
+            class init_compass { postInit = 1; };
+
+            class init_diary { preInit = 1; };
             class init_intel { postInit = 1; };
             
-            class compass { postInit = 1; };
+            class init_mission_start { postInit = 1; };
+            class init_missionLayersDisable { postInit = 1; };
+
+            class init_removeMaps { preInit = 1; };
+            
+            class init_reportReady { postInit = 1; };
+            class init_whiteboards { postInit = 1; };
+            
             class postInit { postInit = 1; };
-            class athomsphereClues { postInit = 1; };
         };
         class Common // Category
         {
-            // class example {};
+            class giveCBRNKit {};
+            class playerCutscene {};
+            class skipTimeTo {};
+            class teleportPlayer {};
         };
     };
 

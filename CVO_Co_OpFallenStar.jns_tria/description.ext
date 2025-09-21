@@ -79,6 +79,8 @@ respawnButton = 0; // Enables the respawn button in the ESC menu
 
 // ###### Other Includes
 
+#include "CfgMusic.hpp"
+
 class CfgSounds {
     sounds[] = {};
     #include "scripts\cbrn\sounds\sounds.hpp"
