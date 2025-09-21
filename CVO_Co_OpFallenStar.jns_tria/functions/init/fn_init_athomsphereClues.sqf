@@ -58,7 +58,7 @@ if (!hasInterface) exitWith {};
             [
                 _code,
                 [_code],
-                60 * (10 + random 10)
+                60 * (15 + random 15)
             ] call CBA_fnc_waitAndExecute;
         };
 
@@ -66,7 +66,7 @@ if (!hasInterface) exitWith {};
         [
             _code,
             [_code],
-            60 * (30 + random 10)
+            60 * (20 + random 20)
         ] call CBA_fnc_waitAndExecute;
     }
 ] call CBA_fnc_waitUntilAndExecute;

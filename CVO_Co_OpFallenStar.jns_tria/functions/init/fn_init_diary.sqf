@@ -14,8 +14,6 @@
 * Public: No
 */
 
-params [["_player", player, [objNull]]];
-
 player createDiaryRecord ["Diary", ["Command / Signal","
 <font size=14 color='#0099ff' face='EtelkaMonospacePro'>
 Command / Signal
@@ -67,11 +65,6 @@ EXECUTION
 ]];
 
 player createDiaryRecord ["Diary", ["Mission","
-<font size=11 face='EtelkaMonospacePro'>
-*** Insert general information about the tasking here.***
-</font>
-<br/>
-<br/>
 <font size=14 color='#0099ff' face='EtelkaMonospacePro'>
 PRIMARY OBJECTIVES
 </font>

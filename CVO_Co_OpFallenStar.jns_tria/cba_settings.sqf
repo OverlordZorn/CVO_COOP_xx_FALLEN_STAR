@@ -403,3 +403,6 @@ force hoa_sling_enabled = true;
 
 // Cigs on AI
 force cigs_ai_set_cigsonai_chance = 0.75
+
+
+// TODO: FIX EW Signals!

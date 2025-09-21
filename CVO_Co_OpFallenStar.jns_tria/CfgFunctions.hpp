@@ -5,9 +5,13 @@ class CfgFunctions {
 
         class init // Category
         {
+            class init_athomsphereClues { postInit = 1; };
+            
+            
             class init_babel { postInit = 1; };
             class init_compass { postInit = 1; };
 
+            class init_dagr { postInit = 1; };
             class init_diary { postInit = 1; };
             class init_intel { postInit = 1; };
             
@@ -18,6 +22,7 @@ class CfgFunctions {
             
             class init_reportReady { postInit = 1; };
             class init_whiteboards { postInit = 1; };
+
             
             class postInit { postInit = 1; };
         };
@@ -25,6 +30,8 @@ class CfgFunctions {
         {
             class giveCBRNKit {};
             class playerCutscene {};
+            class playerPlayAnimation {};
+            class removeNavitems {};
             class skipTimeTo {};
             class teleportPlayer {};
         };

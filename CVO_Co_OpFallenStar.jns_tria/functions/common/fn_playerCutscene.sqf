@@ -15,24 +15,24 @@ private _advArray = [
         openMap [false, true];
         [0.05] call acre_api_fnc_setGlobalVolume;
     }],
-    [ "START" ],
+    [ "START", 6 ],
     [ "CODE", { disableUserInput true; }],
-    [ "DELAY", 5 ],
-    [ "CODE", { playMusic "TheOuterZone_SabledSun" }],
-    [ "DELAY", 5 ],
-    [ "TEXT", "01:47:34<br/><br/><br/><br/><t color='#690000'>24th Chorni Voron</t><br/><br/><br/>Callsign Dagger"],
-    [ "TEXT", "<t color='#690000'>Somewhere</t> in eastern europe..."],
-    [ "TEXT", "... near the <t color='#690000'>chernarussian</t> border"],
+    [ "DELAY", 3 ],
+    [ "CODE", { playMusic "Lustmord_OfBonesOfMen" }],
+    [ "DELAY", 3 ],
+    [ "TEXT", "01:47:34<br/><br/><br/><br/><t color='#ffffff'>24th Chorni Voron</t><br/><br/><br/>Callsign Dagger"],
+    [ "TEXT", "<t color='#ffffff'>Somewhere</t> in eastern europe..."],
     [ "CODE", { [_unit] call mission_fnc_giveCBRNKit }],
-    [ "CODE", { if (isServer) then { [] call mission_fnc_skipTimeTo } }],
+    [ "TEXT", "... near the <t color='#ffffff'>kyrgistan</t> border"],
+    [ "TEXT", "... a <t color='#ffffff'>star</t> has fallen through the sky..."],
     [ "CODE", { [_unit] call mission_fnc_teleportPlayer }],
-    [ "TEXT", "... a <t color='#690000'>star</t> has fallen through the sky..."],
-    [ "TEXT", "Our <t color='#690000'>CBRN Task Force</t> has mobilized their QRF..."],
-    [ "TEXT", "The Mission:<br/>- Stay <t color='#690000'>undetected</t><br/>- Reach the <t color='#690000'>Crashsite</t><br/>- <t color='#690000'>Recover</t> what is possible<br/>- <t color='#690000'>Exfiltrate</t>"],
-    [ "TEXT", "One of <t color='#690000'>our recon teams</t> is already in the area but <t color='#690000'>lost contact</t>"],
-    [ "TEXT", "First Objective: <t color='#690000'>Investigate</t> their last known position..."],
+    [ "TEXT", "CVO's <t color='#ffffff'>CBRN Task Force</t> has mobilized their QRF..."],
+    [ "TEXT", "The Mission:<br/>- Stay <t color='#ffffff'>undetected</t><br/>- Reach the <t color='#ffffff'>Crashsite</t><br/>- <t color='#ffffff'>Recover</t> what is possible<br/>- <t color='#ffffff'>Exfiltrate</t>"],
+    [ "CODE", { if (isServer) then { [] call mission_fnc_skipTimeTo } }],
+    [ "TEXT", "One of <t color='#ffffff'>our recon teams</t> is already in the area but <t color='#ffffff'>lost contact</t>"],
+    [ "TEXT", "First Objective: <t color='#ffffff'>Investigate</t> their last known position..."],
     [ "END" ],
-    [ "CODE", { [_unit] call mission_fnc_playerPlayAnimation; }],
+    //[ "CODE", { [_unit] call mission_fnc_playerPlayAnimation; }],
     [ "DELAY", 7 ],
     [ "CODE", { while {userInputDisabled} do {disableUserInput false;}; }],
     [ "DELAY", 7 ],
@@ -82,11 +82,11 @@ private _delay = 1;
 
         case "TEXT": {
             _args params [ ["_text", "", [""]], "_params" ];
-            _text = format ["<t size=3 font='EraserRegular'>%1", _text];
+            _text = format ["<t size=3 color='#690000' font='EraserRegular'>%1", _text];
 
-            [{ 1 cutText [_this, "PLAIN", 3, false, true, true]; }, _text, _delay] call CBA_fnc_waitAndExecute;
+            [{ 1 cutText [_this, "PLAIN", 5, true, true, true]; }, _text, _delay] call CBA_fnc_waitAndExecute;
             _delay = _delay + 6;
-            [{ 1 cutFadeOut _this; }, 3, _delay] call CBA_fnc_waitAndExecute;
+            [{ 1 cutFadeOut 5; }, "", _delay] call CBA_fnc_waitAndExecute;
             _delay = _delay + 6;
         };
         

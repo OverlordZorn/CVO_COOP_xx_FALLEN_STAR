@@ -14,13 +14,6 @@
 */
 
 
-/*
-_codeToRun  - <CODE> code to Run stated between {}
-_parameters - <ANY> OPTIONAL parameters, will be passed to  code to run, exit code and condition
-_exitCode   - <CODE> OPTIONAL exit code between {} code that will be executed upon ending PFEH default is {}
-_condition  - <CODE THAT RETURNS BOOLEAN> - OPTIONAL conditions during which PFEH will run default {true}
-_delay      - <NUMBER> (optional) delay between each execution in seconds, PFEH executes at most once per frame
-*/
 
 if (!hasInterface) exitWith {};
 
@@ -36,7 +29,7 @@ if (!hasInterface) exitWith {};
                     1
                 ];
             },
-            30
+            10
         ] call CBA_fnc_addPerFrameHandler;
     }
 ] call CBA_fnc_waitUntilAndExecute;
