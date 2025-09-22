@@ -9,7 +9,7 @@ if (isServer) then {
                 [ "mission_notify_players", "Mission begins shortly..." ] call CBA_fnc_globalEvent;
             } else {
                 private _notifyArray = [ ["Waiting for players:"] ];
-                { _notifyArray pushBack [ name player ] } forEach _players;
+                { _notifyArray pushBack [ name _x ] } forEach _players;
                 _notifyArray pushBack true;
                 [ "mission_notify_players", _notifyArray ] call CBA_fnc_globalEvent;
             }
